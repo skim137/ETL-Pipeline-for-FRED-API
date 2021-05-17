@@ -12,10 +12,15 @@ Lastly, users are expected that they have used FRED data before and understand d
 
 ## Instructions
 1. Obtain a 32 character lower-cased alpha-numeric API key. You can get one [here](https://research.stlouisfed.org/useraccount/login/secure/).
-2. Insert your API key in line 13 of *fredapi_etl.py*.
+2. Assign your API key to a variable named *fredkey* in line 13 of *fredapi_etl.py*.
 3. Execute *fredapi_etl.py* in the terminal or an IDE. 
 4. Check the folder where *fredapi_etl.py* is saved to make sure an SQLite db file called *fredapi* is created.
 5. Set API parameters in *parameters* table (more on this below). As an example, you may run *INSERT INTO parameters.sql*, which includes 8 data series from FRED's homepage.
 6. Execute *fredapi_etl.py* in the terminal or an IDE again. If successful, *freddata* table should have data loaded.
 
 ## API Parameters
+Setting correct API parameter values in *parameters* table is extremely important. There are 6 columns you can set:
+* *series_desc*: this is a unique name you can assign for the data series you are retrieving. This is the table's primary key and used for *ticker* column in *freddata*.
+* *series_id*: this is FRED's series id for the data series you are retrieving. For example, the id for the US employment rate is *UNRATE*.
+* *observation_start*: this is a starting date for the data series you are retrieving. Note that there is no functionality to set an observation end date in this tool.
+* *units*: this defines the unit of your data series. By default,   
