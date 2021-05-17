@@ -19,8 +19,10 @@ Lastly, users are expected that they have used FRED data before and understand d
 6. Execute *fredapi_etl.py* in the terminal or an IDE again. If successful, *freddata* table should have data loaded.
 
 ## API Parameters
-Setting correct API parameter values in *parameters* table is extremely important. There are 6 columns you can set:
-* *series_desc*: this is a unique name you can assign for the data series you are retrieving. This is the table's primary key and used for *ticker* column in *freddata*.
+Setting correct API parameter values in *parameters* table is extremely important. You can refer to FRED's documentation [here](https://fred.stlouisfed.org/docs/api/fred/series_observations.html). There are 6 columns you can set:
+* *series_desc*: this is a unique name you can assign for the data series you are retrieving. This is the table's primary key and used for *ticker* column in *freddata* table.
 * *series_id*: this is FRED's series id for the data series you are retrieving. For example, the id for the US employment rate is *UNRATE*.
 * *observation_start*: this is a starting date for the data series you are retrieving. Note that there is no functionality to set an observation end date in this tool.
-* *units*: this defines the unit of your data series. By default,   
+* *units*: this defines the unit of your data series. You may insert *NULL* which will, by default, retrieve untransformed data.
+* *frequency*: this defines the date frequency of your data series. Higher frequency data series can be converted to lower frequency (ex. daily rates to a monthly average). You may insert *NULL* which will, by default, retrieve untransformed data.
+* *aggregation_method*: if *frequency* is something other than *NULL*, then you can define the aggregation method of your data series. You may insert *NULL* which will, by default, retrieve averaged data by period.          
