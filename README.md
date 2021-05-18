@@ -62,5 +62,6 @@ sum | Sum
 eop | End of Period
 
 
-**parameter table example**
+**parameters table example**
 
+![parameters table](https://github.com/skim137/ETL-Pipeline-for-FRED-API/blob/866d3b48eedf478c1119497269596df526f34ea1/parameters%20screenshot.JPG)
