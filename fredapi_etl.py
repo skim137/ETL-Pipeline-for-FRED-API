@@ -21,7 +21,7 @@ else:
 
 
 #SQLite connection
-dbname = 'fredapi2.sqlite3'
+dbname = 'fredapi.sqlite3'
 dbpath = os.path.join(os.path.dirname(__file__), dbname)
 
 conn = sqlite3.connect(dbpath)
